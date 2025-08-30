@@ -1,0 +1,79 @@
+* { transition: all 0.25s ease-in-out; }
+@font-face {
+  font-family: "Kyoukasho";
+  src: local("Kyoukasho"), url("kyoukasho.ttf");
+}
+body {
+  background-color: #13131e;
+  font-family: Kyoukasho;
+  color: #c0c0cf;
+  font-family: sans-serif;
+}
+label { font-weight: bold; font-size: 110%; }
+input, button {
+  color: #bbb;
+  background-color: #23232e;
+  border: 1px solid #555;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0.2em auto;
+}
+input[type="text"], #aftn { width: 2.5em; }
+.exp { 
+  color: #a0a0af;
+  text-align: justify;
+  margin: 0 1.5em;
+}
+#main { text-align: center; }
+#nr {
+  width: 2em;
+  font-size: 250%;
+  padding: 0.25em;
+  margin: 0.4em;
+}
+#defn {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #9ac;
+  margin-top: 0.5em;
+}
+#bmiss { margin-bottom: 0.75em; }
+#bnext, #bcram { margin-top: 0.75em; font-size: 2em; }
+.vl { 
+  width: fit-content;
+  margin: 0.5em auto;
+  line-height: 2em;
+  background-color: #23232e;
+  border: 1px solid #555;
+  border-radius: 3px;
+}
+.vw, .bh, ruby { font-size: 1.5em; }
+.mn { opacity: 0; }
+.sm { opacity: 1; }
+b, .hl { font-weight: bold; color: #eed; }
+.win, #go { background-color: #365; }
+#bmiss, .miss { background-color: #a32; }
+#bnext, #bcram { background-color: #884; color: #223; }
+#dummy { position: absolute; top: -999px; }
+#pbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2em;
+  background-repeat: no-repeat;
+}
+#go {
+  font-size: 2em;
+  font-variant: small-caps;
+}
+rt { font-size: 66%; }
+#sr span { 
+  font-family: Kyoukasho;
+  font-size: 2.5em;
+  display: inline-block;
+  margin: 0.2em;
+}
+.rc { color: #365; }
+.rw { background-color: #a32; border-radius: 5em; }

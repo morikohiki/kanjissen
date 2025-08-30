@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanji Driller</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="db.js"></script>
+  </head>
+  <body>
+    <form id="config" onsubmit="ikimasu(); return false; ">
+      <label for="lvl">Level(s): <input type="text" inputmode="numeric" id="lvl" placeholder="60" oninput="calcsl()" required /></label> <span id="sbr"></span>
+      <div class="exp">
+        This can be either an individual WaniKani level or a range (e.g. <code>5-7</code>).
+      </div>
+      <label for="sd">Session: <input type="text" id="sd" value="x1" autocapitalize="off" oninput="calcsl()" required /></label> <span id="slr"></span>
+      <div class="exp">
+        This can either be an integer, to drill exactly that many kanji (with repeats as necessary); or <code>xN</code>, to drill each of your selected kanji N times.
+      </div>
+      Input accept: <input type="radio" name="acc" value="asap" id="asap"><label for="asap"> automatic</label>
+      <input type="radio" name="acc" value="oce" id="oce" checked><label for="oce"> manual</label>
+      <div class="exp">
+        In automatic mode, a correct answer will be accepted as soon as it's your IME's first suggestion, without you having to hit Enter (or indeed finish composing the character); this is great if you're trying to go really fast, but can be a little jarring at first.
+      </div>
+      <label for="aftn">Next kanji after: <input type="number" id="aftn" size="1" min="0" step="any" value="2.5" /></label> seconds
+      <div class="exp">
+        Leave blank to disable auto-advance. Be advised that combining both lightning modes (ASAP acceptance plus very low auto-advance) may result in inadvertent initial strokes, though some pains have been taken to mitigate this.
+      </div>
+      <center><br><button id="go"><ruby>始<rt>はじ</rt></ruby><ruby>めます<rt>start</rt></ruby></button></center>
+    </form>
+    <div id="main">
+      <div id="defn"></div>
+      <input type="text" id="nr" lang="ja" size="1" autocomplete="off" />
+      <input type="button" id="bmiss" value="MISS" onclick="miss()" />
+      <div id="vl"></div>
+      <input type="button" id="bnext" value="NEXT" onclick="next()" />
+      <div id="pbar"></div>
+    </div>
+    <div id="res">
+      <h2>💮 Results</h2>
+      <div id="sr"></div>
+      <center><input type="button" id="bcram" value="CRAM" onclick="cram()" /></center>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
