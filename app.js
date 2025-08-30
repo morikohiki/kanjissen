@@ -75,7 +75,7 @@ function up(n) {
 }
 
 const el = (tag, props = {}, children = []) => children.reduce((e, child) =>
-  (e.append(child), e), Object.assign(document.createElement(tag), props);
+  (e.append(child), e), Object.assign(document.createElement(tag), props)
 );
 
 function tick() {
